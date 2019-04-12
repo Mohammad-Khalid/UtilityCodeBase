@@ -1,0 +1,44 @@
+{
+  "deploy_settings": {
+    "khalid": {
+      "skill_id": "amzn1.ask.skill.0a0bf26a-f656-4cd1-bb66-c26c498cbcf4",
+      "was_cloned": false,
+      "merge": {
+        "manifest": {
+          "apis": {
+            "custom": {
+              "endpoint": {
+                "uri": "arn:aws:lambda:us-east-1:639636902568:function:manual-dialog-delegation-khalid"
+              }
+            }
+          }
+        }
+      },
+      "in_skill_products": [],
+      "resources": {
+        "manifest": {
+          "eTag": "3091983715e0cecb187b75b7818e60c1"
+        },
+        "interactionModel": {
+          "en-US": {
+            "eTag": "5cbf95688f598a4504d07b60b4b609d5"
+          }
+        },
+        "lambda": [
+          {
+            "alexaUsage": [
+              "custom/default"
+            ],
+            "arn": "arn:aws:lambda:us-east-1:639636902568:function:manual-dialog-delegation-khalid",
+            "awsRegion": "us-east-1",
+            "codeUri": "lambda/custom",
+            "functionName": "manual-dialog-delegation-khalid",
+            "handler": "index.handler",
+            "revisionId": "4561f29c-bbbb-4b2c-9d46-a124a897a4a7",
+            "runtime": "nodejs8.10"
+          }
+        ]
+      }
+    }
+  }
+}

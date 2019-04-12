@@ -1,0 +1,180 @@
+{
+  "interactionModel": {
+      "languageModel": {
+          "invocationName": "trip planing",
+          "intents": [
+              {
+                  "name": "AMAZON.CancelIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.HelpIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.StopIntent",
+                  "samples": []
+              },
+              {
+                  "name": "PlanMyTripIntent",
+                  "slots": [
+                      {
+                          "name": "toCity",
+                          "type": "AMAZON.US_CITY",
+                          "samples": [
+                              "I want to go {toCity}",
+                              "I like to go {toCity}"
+                          ]
+                      },
+                      {
+                          "name": "fromCity",
+                          "type": "AMAZON.US_CITY",
+                          "samples": [
+                              "I want to go {fromCity}",
+                              "I like to go {fromCity}",
+                              "{fromCity}"
+                          ]
+                      },
+                      {
+                          "name": "travelDate",
+                          "type": "AMAZON.DATE",
+                          "samples": [
+                              "on {travelDate}",
+                              "{travelDate}"
+                          ]
+                      }
+                  ],
+                  "samples": [
+                      "I want to visit {toCity} for {travelDate}",
+                      "I want to visit from {fromCity} to {toCity} for {travelDate}",
+                      "I want to visit",
+                      "Book my trip to {toCity} for {travelDate}",
+                      "I want to book a visit",
+                      "I want to book a visit to {toCity} for {travelDate}",
+                      "I want to book a visit from {fromCity} to {toCity} for {travelDate}"
+                  ]
+              },
+              {
+                  "name": "AMAZON.NavigateHomeIntent",
+                  "samples": []
+              }
+          ],
+          "types": []
+      },
+      "dialog": {
+          "intents": [
+              {
+                  "name": "PlanMyTripIntent",
+                  "confirmationRequired": false,
+                  "prompts": {},
+                  "slots": [
+                      {
+                          "name": "toCity",
+                          "type": "AMAZON.US_CITY",
+                          "confirmationRequired": false,
+                          "elicitationRequired": true,
+                          "prompts": {
+                              "elicitation": "Elicit.Slot.1124234594712.901122852057"
+                          },
+                          "validations": [
+                              {
+                                  "type": "isInSet",
+                                  "prompt": "Slot.Validation.600223929039.760375991464.939114789040",
+                                  "values": [
+                                      "nagpur",
+                                      "pune",
+                                      "banglor",
+                                      "chennai",
+                                      "kerala"
+                                  ]
+                              }
+                          ]
+                      },
+                      {
+                          "name": "fromCity",
+                          "type": "AMAZON.US_CITY",
+                          "confirmationRequired": false,
+                          "elicitationRequired": true,
+                          "prompts": {
+                              "elicitation": "Elicit.Slot.1124234594712.49175943325"
+                          },
+                          "validations": [
+                              {
+                                  "type": "isInSet",
+                                  "prompt": "Slot.Validation.600223929039.1404026754594.1143818218460",
+                                  "values": [
+                                      "nagpur",
+                                      "pune",
+                                      "banglor",
+                                      "chennai",
+                                      "kerala",
+                                      "mumbai",
+                                      "delhi",
+                                      "kolkata"
+                                  ]
+                              }
+                          ]
+                      },
+                      {
+                          "name": "travelDate",
+                          "type": "AMAZON.DATE",
+                          "confirmationRequired": false,
+                          "elicitationRequired": true,
+                          "prompts": {
+                              "elicitation": "Elicit.Slot.1124234594712.1413969372947"
+                          }
+                      }
+                  ]
+              }
+          ],
+          "delegationStrategy": "ALWAYS"
+      },
+      "prompts": [
+          {
+              "id": "Elicit.Slot.1124234594712.1413969372947",
+              "variations": [
+                  {
+                      "type": "PlainText",
+                      "value": "for which date you want to visit?"
+                  }
+              ]
+          },
+          {
+              "id": "Elicit.Slot.1124234594712.49175943325",
+              "variations": [
+                  {
+                      "type": "PlainText",
+                      "value": "from where you want to leave?"
+                  }
+              ]
+          },
+          {
+              "id": "Elicit.Slot.1124234594712.901122852057",
+              "variations": [
+                  {
+                      "type": "PlainText",
+                      "value": "where you want to go?"
+                  }
+              ]
+          },
+          {
+              "id": "Slot.Validation.600223929039.760375991464.939114789040",
+              "variations": [
+                  {
+                      "type": "PlainText",
+                      "value": "Please choose city that are in india"
+                  }
+              ]
+          },
+          {
+              "id": "Slot.Validation.600223929039.1404026754594.1143818218460",
+              "variations": [
+                  {
+                      "type": "PlainText",
+                      "value": "Please choose city that are in india"
+                  }
+              ]
+          }
+      ]
+  }
+}
